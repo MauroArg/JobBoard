@@ -1,0 +1,10 @@
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\JobBoard.exe.config
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\JobBoard.exe
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\JobBoard.pdb
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.csprojAssemblyReference.cache
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.Properties.Resources.resources
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.csproj.GenerateResource.cache
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.csproj.CoreCompileInputs.cache
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.exe
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.pdb
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.Main.resources
