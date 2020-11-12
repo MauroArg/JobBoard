@@ -13,21 +13,21 @@ namespace JobBoard.Controller
     {
         //SQLite variables to use querys
 
-        private SQLiteConnection sqlCon;
-        private SQLiteCommand sqlCmd;
-        private SQLiteDataAdapter db;
-        private DataSet ds = new DataSet();
-        private DataTable dt = new DataTable();
+        public static SQLiteConnection sqlCon;
+        public static SQLiteCommand sqlCmd;
+        public static SQLiteDataAdapter db;
+        public static DataSet ds = new DataSet();
+        public static DataTable dt = new DataTable();
 
         //Set connection
 
-        private void SetConnection()
+        private static void SetConnection()
         {
-            sqlCon = new SQLiteConnection("Data Source=data.db;Version3;New=False;Compress=True");
+            sqlCon = new SQLiteConnection("Data Source=data.db;Version=3;New=False;Compress=True");
         }
 
         //Set Executequery
-        private void ExecuteQuery(string txtQuery)
+        public void ExecuteQuery(string txtQuery)
         {
             SetConnection();
             sqlCon.Open();
@@ -36,6 +36,21 @@ namespace JobBoard.Controller
             sqlCmd.ExecuteNonQuery();
             sqlCon.Close();
            
+        }
+
+        //Load Data
+        public static DataTable LoadData()
+        {
+            SetConnection();
+            sqlCon.Open();
+            sqlCmd = sqlCon.CreateCommand();
+            string commandText = "SELECT * FROM Fields";
+            db = new SQLiteDataAdapter(commandText, sqlCon);
+            ds.Reset();
+            db.Fill(ds);
+            dt = ds.Tables[0];
+            sqlCon.Close();
+            return dt;
         }
     }
 }

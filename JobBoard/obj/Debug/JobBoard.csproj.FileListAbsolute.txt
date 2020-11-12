@@ -8,3 +8,12 @@ C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.csproj.C
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.exe
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.pdb
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.Main.resources
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\EntityFramework.dll
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\System.Data.SQLite.dll
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\EntityFramework.xml
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\bin\Debug\System.Data.SQLite.xml
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Debug\JobBoard.csproj.CopyComplete
