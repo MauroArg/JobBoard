@@ -190,6 +190,9 @@ namespace JobBoard
             catch(Exception)
             {
                 MessageBox.Show("Please use a side and valid column to select job");
+
+                SetDefault();
+                ResetForm();
             }
         }
 
