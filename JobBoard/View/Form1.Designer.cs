@@ -219,6 +219,7 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "SaonJobBoard";
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
