@@ -27,7 +27,7 @@ namespace JobBoard.Controller
         }
 
         //Set Executequery
-        public void ExecuteQuery(string txtQuery)
+        public  static void ExecuteQuery(string txtQuery)
         {
             SetConnection();
             sqlCon.Open();

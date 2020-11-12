@@ -18,6 +18,7 @@ namespace JobBoard
         public Main()
         {
             InitializeComponent();
+            dtpExpires.MinDate = DateTime.Now;
         }
 
         //SQLite variables to use querys
@@ -43,7 +44,15 @@ namespace JobBoard
         //Add Job
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            string txtQuery = "INSERT INTO Fields (Job,JobTitle,Description,CreatedAt,ExpiresAt)" +
+                "VALUES('" + txtJob.Text + "','"+txtJobTitle.Text+"','"+ txtDescription.Text +"','"+ DateTime.Now.ToString("MM/dd/yyyy") +"','"+ dtpExpires.Text +"')";
 
+            Query.ExecuteQuery(txtQuery);
+            LoadDataGrid();
+            txtJob.Text = "";
+            txtJobTitle.Text = "";
+            txtDescription.Text = "";
+            dtpExpires.Value = DateTime.Now;
         }
 
         //Edit Job

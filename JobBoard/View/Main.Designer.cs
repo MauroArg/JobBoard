@@ -42,7 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpExpires = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,20 +183,22 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Expires At";
             // 
-            // dateTimePicker1
+            // dtpExpires
             // 
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.Maroon;
-            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.White;
-            this.dateTimePicker1.Location = new System.Drawing.Point(44, 447);
-            this.dateTimePicker1.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(270, 20);
-            this.dateTimePicker1.TabIndex = 13;
-            this.dateTimePicker1.TabStop = false;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.dtpExpires.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpExpires.CalendarMonthBackground = System.Drawing.Color.Maroon;
+            this.dtpExpires.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dtpExpires.CalendarTitleForeColor = System.Drawing.Color.White;
+            this.dtpExpires.CalendarTrailingForeColor = System.Drawing.Color.White;
+            this.dtpExpires.CustomFormat = "MM/dd/yyyy";
+            this.dtpExpires.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpires.Location = new System.Drawing.Point(44, 447);
+            this.dtpExpires.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.dtpExpires.Name = "dtpExpires";
+            this.dtpExpires.Size = new System.Drawing.Size(270, 20);
+            this.dtpExpires.TabIndex = 13;
+            this.dtpExpires.TabStop = false;
+            this.dtpExpires.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
             // Main
             // 
@@ -204,7 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1033, 619);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpExpires);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label5);
@@ -244,7 +246,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpExpires;
     }
 }
 
