@@ -26,6 +26,8 @@ namespace JobBoard
             btnUpdate.Enabled = false;
             btnCancel.Enabled = false;
             dtpExpires.MinDate = DateTime.Now;
+            dgvBoard.AllowUserToResizeRows = false;
+            dgvBoard.AllowUserToResizeColumns = false;
 
 
         }

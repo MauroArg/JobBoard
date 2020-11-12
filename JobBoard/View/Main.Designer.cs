@@ -50,6 +50,7 @@
             // 
             // dgvBoard
             // 
+            this.dgvBoard.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBoard.Location = new System.Drawing.Point(353, 88);
             this.dgvBoard.Name = "dgvBoard";
