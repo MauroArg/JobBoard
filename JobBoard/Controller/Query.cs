@@ -53,7 +53,7 @@ namespace JobBoard.Controller
             return dt;
         }
 
-        //Insert Data in Fields
+        //Insert a Job
         public static bool InsertFields (string job, string jobTitle, string description, string expiresAt)
         {
             bool res;
@@ -68,12 +68,60 @@ namespace JobBoard.Controller
                 ExecuteQuery(txtQuery);
                 res = true;
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 res = false;
             }
 
             return res;
         }
+
+        //Update a Job
+        public static bool UpdateFields(string id, string job, string jobTitle, string description, string expiresAt)
+        {
+            bool res;
+
+            try
+            {
+                //Update Query
+                string txtQuery = "UPDATE Fields SET Job='" + job + "', JobTitle='" + jobTitle + "', Description='" + description + "', ExpiresAt='" + expiresAt + "' WHERE Id=" + id;
+
+                //Call execute query to update a job
+                ExecuteQuery(txtQuery);
+
+                res = true;
+            }
+            catch(Exception)
+            {
+                res = false;
+            }
+
+            return res;
+        }
+
+        //Delete a Job
+        public static bool DeleteFields(string id)
+        {
+            bool res;
+
+            try
+            {
+                //Delete Query
+                string txtQuery = "DELETE FROM Fields WHERE Id=" + id;
+
+                //Call execute query to delete a job
+                Query.ExecuteQuery(txtQuery);
+
+                res = true;
+            }
+            catch(Exception)
+            {
+                res = false;
+            }
+
+            return res;
+        }
+
+
     }
 }

@@ -196,7 +196,7 @@
             this.dtpExpires.CustomFormat = "MM/dd/yyyy";
             this.dtpExpires.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpExpires.Location = new System.Drawing.Point(44, 478);
-            this.dtpExpires.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
+            this.dtpExpires.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
             this.dtpExpires.Name = "dtpExpires";
             this.dtpExpires.Size = new System.Drawing.Size(270, 20);
             this.dtpExpires.TabIndex = 13;
