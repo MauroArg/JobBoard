@@ -52,5 +52,28 @@ namespace JobBoard.Controller
             sqlCon.Close();
             return dt;
         }
+
+        //Insert Data in Fields
+        public static bool InsertFields (string job, string jobTitle, string description, string expiresAt)
+        {
+            bool res;
+
+            try
+            {
+                //Insert query
+                string txtQuery = "INSERT INTO Fields (Job,JobTitle,Description,CreatedAt,ExpiresAt)" +
+                    "VALUES('" + job + "','" + jobTitle + "','" + description + "','" + DateTime.Now.ToString("MM/dd/yyyy") + "','" + expiresAt + "')";
+
+                //Call execute query to add a job
+                ExecuteQuery(txtQuery);
+                res = true;
+            }
+            catch(Exception e)
+            {
+                res = false;
+            }
+
+            return res;
+        }
     }
 }

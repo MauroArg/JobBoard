@@ -19,8 +19,6 @@ namespace JobBoard
         {
             InitializeComponent();
 
-            //Set min date at the current date
-            dtpExpires.MinDate = DateTime.Now;
         }
 
 
@@ -39,9 +37,18 @@ namespace JobBoard
         //Add Job
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //Insert query
-            string txtQuery = "INSERT INTO Fields (Job,JobTitle,Description,CreatedAt,ExpiresAt)" +
-                "VALUES('" + txtJob.Text + "','"+txtJobTitle.Text+"','"+ txtDescription.Text +"','"+ DateTime.Now.ToString("MM/dd/yyyy") +"','"+ dtpExpires.Text +"')";
+            Query.InsertFields(txtJob.Text, txtJobTitle.Text, txtDescription.Text, dtpExpires.Text);
+
+            //Reload dataGridView
+            LoadDataGrid();
+
+            ResetForm();
+        }
+
+        //Edit Job
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string txtQuery = "UPDATE Fields SET Job='"+ txtJob.Text +"', JobTitle='"+ txtJobTitle.Text +"', Description='"+ txtDescription.Text +"', ExpiresAt='"+ dtpExpires.Text + "' WHERE Id="+txtId.Text;
 
             //Call execute query to add a job
             Query.ExecuteQuery(txtQuery);
@@ -49,28 +56,41 @@ namespace JobBoard
             //Reload dataGridView
             LoadDataGrid();
 
-            //Reset Forms
+            ResetForm();
+
+        }
+
+
+        //Delete Job
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string txtQuery = "DELETE FROM Fields WHERE Id=" + txtId.Text;
+
+            //Call execute query to add a job
+            Query.ExecuteQuery(txtQuery);
+
+            //Reload dataGridView
+            LoadDataGrid();
+
+            ResetForm();
+        }
+
+
+
+        //Reset Form
+        private void ResetForm()
+        {
+            txtId.Text = "";
             txtJob.Text = "";
             txtJobTitle.Text = "";
             txtDescription.Text = "";
             dtpExpires.Value = DateTime.Now;
         }
 
-        //Edit Job
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //Delete Job
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvBoard_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Fill form data
+            txtId.Text = dgvBoard.SelectedRows[0].Cells[0].Value.ToString();
             txtJob.Text = dgvBoard.SelectedRows[0].Cells[1].Value.ToString();
             txtJobTitle.Text = dgvBoard.SelectedRows[0].Cells[2].Value.ToString();
             txtDescription.Text = dgvBoard.SelectedRows[0].Cells[3].Value.ToString();

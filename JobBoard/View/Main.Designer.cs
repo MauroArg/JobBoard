@@ -43,6 +43,8 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpExpires = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +101,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(981, 552);
+            this.label1.Location = new System.Drawing.Point(981, 567);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 4;
@@ -120,7 +122,7 @@
             // 
             // txtJob
             // 
-            this.txtJob.Location = new System.Drawing.Point(44, 117);
+            this.txtJob.Location = new System.Drawing.Point(44, 145);
             this.txtJob.Name = "txtJob";
             this.txtJob.Size = new System.Drawing.Size(270, 20);
             this.txtJob.TabIndex = 6;
@@ -130,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 88);
+            this.label3.Location = new System.Drawing.Point(41, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 7;
@@ -141,7 +143,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(41, 170);
+            this.label4.Location = new System.Drawing.Point(41, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 8;
@@ -149,7 +151,7 @@
             // 
             // txtJobTitle
             // 
-            this.txtJobTitle.Location = new System.Drawing.Point(44, 209);
+            this.txtJobTitle.Location = new System.Drawing.Point(44, 223);
             this.txtJobTitle.Name = "txtJobTitle";
             this.txtJobTitle.Size = new System.Drawing.Size(270, 20);
             this.txtJobTitle.TabIndex = 9;
@@ -159,7 +161,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(41, 263);
+            this.label5.Location = new System.Drawing.Point(41, 280);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 16);
             this.label5.TabIndex = 10;
@@ -167,7 +169,7 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(44, 296);
+            this.txtDescription.Location = new System.Drawing.Point(44, 319);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(270, 88);
@@ -178,7 +180,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(41, 409);
+            this.label6.Location = new System.Drawing.Point(41, 434);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
             this.label6.TabIndex = 12;
@@ -193,7 +195,7 @@
             this.dtpExpires.CalendarTrailingForeColor = System.Drawing.Color.White;
             this.dtpExpires.CustomFormat = "MM/dd/yyyy";
             this.dtpExpires.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpires.Location = new System.Drawing.Point(44, 447);
+            this.dtpExpires.Location = new System.Drawing.Point(44, 478);
             this.dtpExpires.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             this.dtpExpires.Name = "dtpExpires";
             this.dtpExpires.Size = new System.Drawing.Size(270, 20);
@@ -201,12 +203,33 @@
             this.dtpExpires.TabStop = false;
             this.dtpExpires.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(41, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 16);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Id";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(44, 78);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(270, 20);
+            this.txtId.TabIndex = 15;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(1033, 619);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpExpires);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
@@ -248,6 +271,8 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpExpires;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtId;
     }
 }
 
