@@ -53,6 +53,7 @@
             this.dgvBoard.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBoard.Location = new System.Drawing.Point(353, 88);
             this.dgvBoard.Name = "dgvBoard";
+            this.dgvBoard.ReadOnly = true;
             this.dgvBoard.Size = new System.Drawing.Size(668, 439);
             this.dgvBoard.TabIndex = 0;
             this.dgvBoard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoard_CellClick);
