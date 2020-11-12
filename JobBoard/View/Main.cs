@@ -23,6 +23,7 @@ namespace JobBoard
             txtId.Enabled = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            btnCancel.Enabled = false;
           
         }
 
@@ -42,23 +43,66 @@ namespace JobBoard
         //Add Job
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //Calll method InsertFields with form data
-            Query.InsertFields(txtJob.Text, txtJobTitle.Text, txtDescription.Text, dtpExpires.Text);
+            //Validate Fields
+
+            if(txtJob.Text.Trim() != String.Empty && txtJobTitle.Text.Trim() != String.Empty && txtDescription.Text.Trim() != String.Empty)
+            {
+                //Calll method InsertFields with form data and validate process
+                if(Query.InsertFields(txtJob.Text, txtJobTitle.Text, txtDescription.Text, dtpExpires.Text))
+                {
+
+                    MessageBox.Show("Added successfully");
+
+                    ResetForm();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+
+                    ResetForm();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please complete all fields");
+            }
+
 
             //Reload dataGridView
             LoadDataGrid();
-
-            ResetForm();
         }
 
         //Edit Job
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //Show message to validate update
-            if (MessageBox.Show("Are you sure you want to delete this record?", "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //Validate Fields
+
+            if (txtJob.Text.Trim() != String.Empty && txtJobTitle.Text.Trim() != String.Empty && txtDescription.Text.Trim() != String.Empty)
             {
-                //Calll method UpdateFields with form data
-                Query.UpdateFields(txtId.Text, txtJob.Text, txtJobTitle.Text, txtDescription.Text, dtpExpires.Text);
+                //Show message to validate update
+                if (MessageBox.Show("Are you sure you want to update the record "+ txtId.Text + "?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    //Calll method UpdateFields with form data
+                    if(Query.UpdateFields(txtId.Text, txtJob.Text, txtJobTitle.Text, txtDescription.Text, dtpExpires.Text))
+                    {
+                        MessageBox.Show("Updated successfully");
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Something went wrong");
+
+                    }
+                    ResetForm();
+
+                    SetDefault();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please complete all fields");
             }
 
             //Reload dataGridView
@@ -73,17 +117,38 @@ namespace JobBoard
         private void btnDelete_Click(object sender, EventArgs e)
         {
             //Show message to validate delete
-            if (MessageBox.Show("Are you sure you want to delete this record?", "Mensaje", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to delete the record " + txtId.Text + "?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 //Call method DeleteFields with id
-                Query.DeleteFields(txtId.Text);
+                if(Query.DeleteFields(txtId.Text))
+                {
+                    MessageBox.Show("Deleted successfully");
+
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+
+                }
+
             }
-                
+
+            ResetForm();
+            SetDefault();
+
 
             //Reload dataGridView
             LoadDataGrid();
 
-            ResetForm();
+        }
+
+        //Restart buttons enabled properties
+        private void SetDefault()
+        {
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnCancel.Enabled = false;
+            btnCreate.Enabled = true;
         }
 
 
@@ -103,6 +168,7 @@ namespace JobBoard
             //Enable delete and update buttons
             btnUpdate.Enabled = true;
             btnDelete.Enabled = true;
+            btnCancel.Enabled = true;
 
             //Disable create button
             btnCreate.Enabled = false;
@@ -113,6 +179,15 @@ namespace JobBoard
             txtJobTitle.Text = dgvBoard.SelectedRows[0].Cells[2].Value.ToString();
             txtDescription.Text = dgvBoard.SelectedRows[0].Cells[3].Value.ToString();
             dtpExpires.Value = DateTime.ParseExact(dgvBoard.SelectedRows[0].Cells[5].Value.ToString(), "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        }
+
+        //Cancel delete and update status
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to cancel changes?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                SetDefault();
+
+            ResetForm();
         }
     }
 }
