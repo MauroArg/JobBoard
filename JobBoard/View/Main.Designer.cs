@@ -43,7 +43,6 @@
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtpExpires = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBoard)).BeginInit();
@@ -123,7 +122,7 @@
             // 
             // txtJob
             // 
-            this.txtJob.Location = new System.Drawing.Point(44, 145);
+            this.txtJob.Location = new System.Drawing.Point(44, 124);
             this.txtJob.Name = "txtJob";
             this.txtJob.Size = new System.Drawing.Size(270, 20);
             this.txtJob.TabIndex = 6;
@@ -133,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 110);
+            this.label3.Location = new System.Drawing.Point(41, 88);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 7;
@@ -144,7 +143,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(41, 186);
+            this.label4.Location = new System.Drawing.Point(41, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 8;
@@ -152,7 +151,7 @@
             // 
             // txtJobTitle
             // 
-            this.txtJobTitle.Location = new System.Drawing.Point(44, 223);
+            this.txtJobTitle.Location = new System.Drawing.Point(44, 218);
             this.txtJobTitle.Name = "txtJobTitle";
             this.txtJobTitle.Size = new System.Drawing.Size(270, 20);
             this.txtJobTitle.TabIndex = 9;
@@ -162,7 +161,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(41, 280);
+            this.label5.Location = new System.Drawing.Point(41, 275);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 16);
             this.label5.TabIndex = 10;
@@ -204,20 +203,9 @@
             this.dtpExpires.TabStop = false;
             this.dtpExpires.Value = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(41, 49);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 16);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Id";
-            // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(44, 78);
+            this.txtId.Location = new System.Drawing.Point(0, 21);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(270, 20);
@@ -244,7 +232,6 @@
             this.ClientSize = new System.Drawing.Size(1033, 619);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtId);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpExpires);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDescription);
@@ -286,7 +273,6 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtpExpires;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Button btnCancel;
     }

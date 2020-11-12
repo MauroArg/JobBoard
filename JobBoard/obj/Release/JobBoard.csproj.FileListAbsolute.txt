@@ -16,3 +16,4 @@ C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Release\JobBoard.csproj
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Release\JobBoard.csproj.CopyComplete
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Release\JobBoard.exe
 C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Release\JobBoard.pdb
+C:\Users\Maury\OneDrive\Escritorio\JobBoard\JobBoard\obj\Release\JobBoard.csprojAssemblyReference.cache

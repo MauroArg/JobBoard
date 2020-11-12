@@ -21,10 +21,13 @@ namespace JobBoard
 
             //Disable unused fields and buttons
             txtId.Enabled = false;
+            txtId.Visible = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
             btnCancel.Enabled = false;
-          
+            dtpExpires.MinDate = DateTime.Now;
+
+
         }
 
 
@@ -149,6 +152,7 @@ namespace JobBoard
             btnUpdate.Enabled = false;
             btnCancel.Enabled = false;
             btnCreate.Enabled = true;
+            dtpExpires.MinDate = DateTime.Now;
         }
 
 
@@ -165,29 +169,40 @@ namespace JobBoard
 
         private void dgvBoard_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Enable delete and update buttons
-            btnUpdate.Enabled = true;
-            btnDelete.Enabled = true;
-            btnCancel.Enabled = true;
+            try
+            {
+                //Enable delete and update buttons
+                btnUpdate.Enabled = true;
+                btnDelete.Enabled = true;
+                btnCancel.Enabled = true;
+                dtpExpires.MinDate = new DateTime(2020, 11, 1);
 
-            //Disable create button
-            btnCreate.Enabled = false;
+                //Disable create button
+                btnCreate.Enabled = false;
 
-            //Fill form data
-            txtId.Text = dgvBoard.SelectedRows[0].Cells[0].Value.ToString();
-            txtJob.Text = dgvBoard.SelectedRows[0].Cells[1].Value.ToString();
-            txtJobTitle.Text = dgvBoard.SelectedRows[0].Cells[2].Value.ToString();
-            txtDescription.Text = dgvBoard.SelectedRows[0].Cells[3].Value.ToString();
-            dtpExpires.Value = DateTime.ParseExact(dgvBoard.SelectedRows[0].Cells[5].Value.ToString(), "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                //Fill form data
+                txtId.Text = dgvBoard.SelectedRows[0].Cells[0].Value.ToString();
+                txtJob.Text = dgvBoard.SelectedRows[0].Cells[1].Value.ToString();
+                txtJobTitle.Text = dgvBoard.SelectedRows[0].Cells[2].Value.ToString();
+                txtDescription.Text = dgvBoard.SelectedRows[0].Cells[3].Value.ToString();
+                dtpExpires.Value = DateTime.ParseExact(dgvBoard.SelectedRows[0].Cells[5].Value.ToString(), "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Please use a side and valid column to select job");
+            }
         }
 
         //Cancel delete and update status
         private void btnCancel_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to cancel changes?", "Message", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
                 SetDefault();
 
-            ResetForm();
+                ResetForm();
+            }
+                
         }
     }
 }
