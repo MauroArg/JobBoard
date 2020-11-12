@@ -18,16 +18,11 @@ namespace JobBoard
         public Main()
         {
             InitializeComponent();
+
+            //Set min date at the current date
             dtpExpires.MinDate = DateTime.Now;
         }
 
-        //SQLite variables to use querys
-
-        private SQLiteConnection sqlCon;
-        private SQLiteCommand sqlCmd;
-        private SQLiteDataAdapter db;
-        private DataSet ds = new DataSet();
-        private DataTable dt = new DataTable();
 
         //Load Form
         private void Main_Load(object sender, EventArgs e)
@@ -44,11 +39,17 @@ namespace JobBoard
         //Add Job
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            //Insert query
             string txtQuery = "INSERT INTO Fields (Job,JobTitle,Description,CreatedAt,ExpiresAt)" +
                 "VALUES('" + txtJob.Text + "','"+txtJobTitle.Text+"','"+ txtDescription.Text +"','"+ DateTime.Now.ToString("MM/dd/yyyy") +"','"+ dtpExpires.Text +"')";
 
+            //Call execute query to add a job
             Query.ExecuteQuery(txtQuery);
+
+            //Reload dataGridView
             LoadDataGrid();
+
+            //Reset Forms
             txtJob.Text = "";
             txtJobTitle.Text = "";
             txtDescription.Text = "";
@@ -65,6 +66,15 @@ namespace JobBoard
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvBoard_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Fill form data
+            txtJob.Text = dgvBoard.SelectedRows[0].Cells[1].Value.ToString();
+            txtJobTitle.Text = dgvBoard.SelectedRows[0].Cells[2].Value.ToString();
+            txtDescription.Text = dgvBoard.SelectedRows[0].Cells[3].Value.ToString();
+            dtpExpires.Value = DateTime.ParseExact(dgvBoard.SelectedRows[0].Cells[5].Value.ToString(), "MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
     }
 }

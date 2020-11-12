@@ -53,6 +53,7 @@
             this.dgvBoard.Name = "dgvBoard";
             this.dgvBoard.Size = new System.Drawing.Size(668, 439);
             this.dgvBoard.TabIndex = 0;
+            this.dgvBoard.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBoard_CellClick);
             // 
             // btnCreate
             // 
